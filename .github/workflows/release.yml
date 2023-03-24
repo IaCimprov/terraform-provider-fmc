@@ -1,7 +1,7 @@
-name: lint
+name: Run linter and unit test
 on:
   push:
-    branches: [ main ]
+    branches: "**"
 jobs:
   golint:
     runs-on: ubuntu-latest
