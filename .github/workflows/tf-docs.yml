@@ -1,9 +1,9 @@
 name: Generate terraform documentations
 
 on:
-#   -  push:
-#        branches: [ feature-tests ]
-  pull_request
+  push:
+    branches: "**"
+  pull_request:
 
 jobs:
   tf-docs:
