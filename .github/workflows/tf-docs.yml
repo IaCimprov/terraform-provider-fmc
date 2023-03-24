@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        ref: main
 
     - name: Render terraform docs inside the USAGE.md and push changes back
       uses: Dirrk/terraform-docs@v1.0.8
