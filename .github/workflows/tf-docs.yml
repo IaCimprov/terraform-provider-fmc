@@ -1,4 +1,4 @@
-name: Test infrastructure (Checkov)
+name: Generate terraform documentations
 
 on:
 #   -  push:
@@ -7,9 +7,7 @@ on:
 
 
 jobs:
-  build:
-  
-  docs:
+  tf-docs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
