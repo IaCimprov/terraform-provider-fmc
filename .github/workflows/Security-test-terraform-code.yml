@@ -13,6 +13,8 @@ on:
 #       - opened
 jobs:
 
+# Checkov scans cloud infrastructure configurations to find misconfigurations before they're deployed
+
   Chekov:
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +29,9 @@ jobs:
         with:
           directory: .
           framework: terraform
-          
+
+# FLint, checks for possible errors, best practices, etc in your terraform code
+
   tflinter:
     runs-on: ubuntu-latest
 
@@ -62,6 +66,8 @@ jobs:
     - name: Run TFLint
       run: tflint -f compact --recursive
 
+# The terraform validate command validates the configuration files in a directory, referring only to the configuration and not accessing any remote services such as remote state, provider APIs, etc.
+
   terraform-validate:
     runs-on: ubuntu-latest
     name: Validate terraform
@@ -78,7 +84,9 @@ jobs:
       - name: Validate failed
         if: ${{ failure() && steps.validate.outputs.failure-reason == 'validate-failed' }}
         run: echo "terraform validate failed"
-        
+  
+# Rewrite Terraform configuration files to a canonical format and style
+  
   terraform-fmt:
     runs-on: ubuntu-latest
     name: Check terraform file are formatted correctly
@@ -98,4 +106,21 @@ jobs:
 #           title: Reformat terraform files
 #           body: Update terraform files to canonical format using `terraform fmt`
 #           branch: automated-terraform-fmt
-  
+
+# Generate terraform documentations  
+
+#   terraform-docs:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Build Docker image
+#       run: "echo **/*.tf | xargs dirname | sort -u"
+      
+#     - name: Render terraform docs inside the USAGE.md and push changes back to PR branch
+#       uses: Dirrk/terraform-docs@v1.0.8
+#       with:
+#         tf_docs_find_dir: .
+# #        tf_docs_working_dir: FMC/
+#         tf_docs_output_file: USAGE.md
+#         tf_docs_output_method: inject
+#         tf_docs_git_push: 'true'
