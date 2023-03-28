@@ -3,18 +3,28 @@ name: Generate terraform documentations
 on:
   push:
     branches: "**"
-  pull_request:
+#       - 'main'
+#       - 'releases/**'
+#       - 'feature/**'
+    tags:
+      - 'v*'
+#   pull_request:
+#     types:
+#       - opened
 
 jobs:
-  tf-docs:
+
+# Generate terraform documentation  
+
+  terraform-docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Render terraform docs inside the USAGE.md and push changes back
-      uses: Dirrk/terraform-docs@v1.0.8
-      with:
-        tf_docs_working_dir: testinfra/fmc
-        tf_docs_output_file: USAGE.md
-        tf_docs_output_method: inject
-        tf_docs_git_push: 'true'
+    - uses: actions/checkout@v2     
+#     - name: Render terraform docs inside the USAGE.md and push changes back to PR branch
+#       uses: Dirrk/terraform-docs@v1.0.8
+#       with:
+#         tf_docs_find_dir: .
+# #        tf_docs_working_dir: FMC/
+#         tf_docs_output_file: USAGE.md
+#         tf_docs_output_method: inject
+#         tf_docs_git_push: 'true'
