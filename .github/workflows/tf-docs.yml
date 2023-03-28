@@ -25,6 +25,6 @@ jobs:
 #       with:
 #         tf_docs_find_dir: .
 # #        tf_docs_working_dir: FMC/
-#         tf_docs_output_file: USAGE.md
+#         tf_docs_output_file: Docs.md
 #         tf_docs_output_method: inject
 #         tf_docs_git_push: 'true'
