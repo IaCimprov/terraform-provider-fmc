@@ -2,7 +2,19 @@ name: Run linter and unit test
 on:
   push:
     branches: "**"
+#       - 'main'
+#       - 'releases/**'
+#       - 'feature/**'
+    tags:
+      - 'v*'
+#   pull_request:
+#     types:
+#       - opened
+
 jobs:
+
+# CodeQL Analysis
+
   check-go-code:
     runs-on: ubuntu-latest
     
@@ -46,6 +58,8 @@ jobs:
           # Optional category for the results
           # Used to differentiate multiple results for one commit
           category: tool
+
+# Run go tests
 
   gotests:
     runs-on: ubuntu-latest
