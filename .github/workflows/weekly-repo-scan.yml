@@ -1,4 +1,4 @@
-name: Security-test-terraform-code
+name: weekly-repo-scan
 
 on:
   push:
