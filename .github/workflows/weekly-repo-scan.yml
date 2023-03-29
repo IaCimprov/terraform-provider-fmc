@@ -70,6 +70,9 @@ jobs:
   trivy:
     name: Trivy
     runs-on: ubuntu-20.04
+    permissions:
+      # required for all workflows
+      security-events: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
