@@ -196,6 +196,7 @@ jobs:
       uses: Dirrk/terraform-docs@v1.0.8
       with:
         tf_docs_find_dir: .
+# In case need to specify folder to scan
 #        tf_docs_working_dir: FMC/
         tf_docs_output_file: Docs.md
         tf_docs_output_method: inject
