@@ -2,8 +2,8 @@ name: weekly-repo-scan
 
 on:
   push:
-    branches: feature-tests
-#       - 'main'
+    branches:
+       - 'main'
 #       - 'releases/**'
 #       - 'feature/**'
 #     tags:
