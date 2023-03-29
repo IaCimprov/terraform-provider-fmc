@@ -4,6 +4,7 @@ on:
   push:
     branches:
        - 'main'
+       - 'feature-tests'
 #       - 'releases/**'
 #       - 'feature/**'
 #     tags:
@@ -75,7 +76,7 @@ jobs:
 #Trivy, comprehensive and versatile security scanner
 
   trivy:
-    name: Build
+    name: Trivy
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
