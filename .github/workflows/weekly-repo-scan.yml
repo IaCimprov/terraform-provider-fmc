@@ -3,7 +3,7 @@ name: weekly-repo-scan
 on:
   push:
     branches:
-       - 'main'
+#       - 'main'
        - 'feature-tests'
 #       - 'releases/**'
 #       - 'feature/**'
